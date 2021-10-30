@@ -1,0 +1,71 @@
+{
+    "title": "JSON data of portfolio projects",
+    "content": [
+        {
+            "title":"Tumblr Clone",
+            "description":"A functional clone of Tumblr using React, Tailwind, Firebase Auth and Firestore.",
+            "image":"bumblr.png",
+            "link":"https://bumblr.netlify.app/",
+            "git": "https://github.com/mwinser/tumblr-clone"
+        },
+        {
+            "title":"Ecommerce Design",
+            "description":"Multipage responsive site with a local storage of user data and cart items",
+            "image":"petals.png",
+            "link":"https://petal-site.netlify.com" ,
+            "git": "https://github.com/mwinser/ecommerce-site"
+        },
+        {
+            "title":"Castaways Game",
+            "description":"A Survivor-style game using useReducer to manage complicated state objects",
+            "image":"castaways.png",
+            "link":"https://castaways.netlify.com" ,
+            "git": "https://github.com/mwinser/castaways"
+        },
+        {
+            "title":"Improv App",
+            "description":"A suggestion generator for the Blue Door Theatre using vanilla javascript",
+            "image":"bdt.webp",
+            "link":"https://bdt-improv.netlify.app/" ,
+            "git": "https://github.com/mwinser/Improv-Suggestion-App"
+        },
+        {
+            "title":"Accordion Design",
+            "description":"Design project featuring accordion-style image menu with expanding panels",
+            "image":"accordion.png",
+            "link":"https://accordion-articles.netlify.app/",
+            "git": "https://github.com/mwinser/AccordionArticles",
+            "wip": "true" 
+        },
+        {
+            "title":"Improv Playlist Manager",
+            "description":"Gatsby project which creates game playlists for improv shows using Google Sheets as a headless CMS",
+            "image":"playlist.png",
+            "link":"https://improv-playlist-manager.netlify.app/",
+            "git": "https://github.com/mwinser/improv-playlist-manager",
+            "wip": "true" 
+        },
+        {
+            "title":"UI Effects",
+            "description":"Project displaying a variety of scroll effects and UI animations",
+            "image":"scroll.png",
+            "link":"https://scroll-animatrix.netlify.app/",
+            "git": "https://github.com/mwinser/ScrollAnimations",
+            "wip": "true" 
+        },
+        {
+            "title":"Pricing Slider",
+            "description":"Frontend Mentor project converting design to code, with a focus on cross-browser compatibility",
+            "image":"slider.png",
+            "link":"https://slider-prices.netlify.app/",
+            "git": "https://github.com/mwinser/interactive-pricing-component" 
+        },
+        {
+            "title":"Landing Page",
+            "description":"Frontend Mentor project converting design to code, with a focus on responsiveness using JS and SASS",
+            "image":"blogr.png",
+            "link":"https://blogr-landr.netlify.app/",
+            "git": "https://github.com/mwinser/blogr-landingpage-challenge" 
+        }
+    ]
+}

@@ -1,24 +1,27 @@
 import * as React from "react"
 import { Link } from "gatsby"
-import { StaticImage } from "gatsby-plugin-image"
+import { graphql } from "gatsby"
+
 
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 
-const IndexPage = () => (
+const IndexPage = ({ data }) => (
+
+  
+  
   <Layout>
-    <Seo title="Home" />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <StaticImage
-      src="../images/gatsby-astronaut.png"
-      width={300}
-      quality={95}
-      formats={["auto", "webp", "avif"]}
-      alt="A Gatsby astronaut"
-      style={{ marginBottom: `1.45rem` }}
-    />
+    <Seo title="Welcome" />
+    <h1>Michael Winser</h1>
+    <p>Welcome to the portfolio of Michael Winser, web developer </p>
+    {console.log(data.allPortfolioProject.nodes)}
+    {data.allPortfolioProject.nodes.map(project=>
+        <>
+        <p>{project.name}</p>
+        <img src={project.image}/>
+        </>
+      )}
+    
     <p>
       <Link to="/page-2/">Go to page 2</Link> <br />
       <Link to="/using-typescript/">Go to "Using TypeScript"</Link> <br />
@@ -27,5 +30,19 @@ const IndexPage = () => (
     </p>
   </Layout>
 )
+
+export const query = graphql`
+  {
+    allPortfolioProject {
+      nodes {
+        title
+        wip
+        link
+        git
+        description
+      }
+    }
+  }
+`
 
 export default IndexPage
