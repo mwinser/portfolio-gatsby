@@ -53,13 +53,7 @@
             "git": "https://github.com/mwinser/ScrollAnimations",
             "wip": "true" 
         },
-        {
-            "title":"Pricing Slider",
-            "description":"Frontend Mentor project converting design to code, with a focus on cross-browser compatibility",
-            "image":"slider.gif",
-            "link":"https://slider-prices.netlify.app/",
-            "git": "https://github.com/mwinser/interactive-pricing-component" 
-        },
+
         {
             "title":"Landing Page",
             "description":"Frontend Mentor project converting design to code, with a focus on responsiveness using JS and SASS",

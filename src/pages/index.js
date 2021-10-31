@@ -1,29 +1,29 @@
 import * as React from "react"
 import { Link } from "gatsby"
+import { GatsbyImage } from "gatsby-plugin-image"
 import { graphql } from "gatsby"
 
 
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 
-const IndexPage = ({ data }) => (
+const IndexPage = ({ data }) => {
 
-  
-  
+  const projects = data.allPortfolioProject.nodes
+  const images = data.allFile.nodes
+  return (
   <Layout>
     <Seo title="Welcome" />
     <h1>Michael Winser</h1>
     <p>Welcome to the portfolio of Michael Winser, web developer </p>
     
-    {data.allPortfolioProject.nodes.map(project=>
+    {projects.map(project=>
         
         <div key={project.title}>
-          {console.log(data.allImageSharp.nodes.filter(image=>image.fluid.originalName===project.image)[0]?.fluid.srcSet)}
           <p>{project.title}</p>
-          <img 
-            srcset={data.allImageSharp.nodes.filter(image=>image.fluid.originalName===project.image)[0]?.fluid.srcSet}
-            sizes="500px"
-          />
+          <GatsbyImage 
+            image={images.filter(image=>image.relativePath===project.image)[0]?.childImageSharp.gatsbyImageData}
+            alt={`${project.title}-image`}/>
         </div>
       )}
     
@@ -34,15 +34,16 @@ const IndexPage = ({ data }) => (
       <Link to="/using-dsg">Go to "Using DSG"</Link>
     </p>
   </Layout>
-)
+  )
+}
 
 export const query = graphql`
   {
-    allImageSharp {
+    allFile {
       nodes {
-        fluid {
-          originalName
-          srcSet
+        relativePath
+        childImageSharp {
+          gatsbyImageData
         }
       }
     }
