@@ -1,6 +1,4 @@
 const portfolio = require('./content/projects.json')
-const path = require('path')
-const IMAGE_PATH = './src/images/'
 
 
 exports.createPages = async ({ actions }) => {
@@ -15,7 +13,7 @@ exports.createPages = async ({ actions }) => {
 
 exports.sourceNodes = ({ actions, createNodeId, createContentDigest }) => {
   portfolio.content.map((project) => {
-    // 1. Extract the project data.
+
     const {
       title,
       description,
@@ -26,31 +24,10 @@ exports.sourceNodes = ({ actions, createNodeId, createContentDigest }) => {
       codepen,
     } = project;
 
-    const { name, ext } = path.parse(image);
-    const absolutePath = path.resolve(__dirname, IMAGE_PATH, image);
-
-    const data = {
-      name,
-      ext,
-      absolutePath,
-      extension: ext.substring(1), 
-    };
-
-    const imageNode = {
-      ...data,
-      id: createNodeId(`project-image-${name}`),
-      internal: {
-        type: 'PortfolioProjectImage',
-        contentDigest: createContentDigest(data),
-      },
-    };
-
-    actions.createNode(imageNode);
-
     const node = {
       title,
       description,
-      imageNode,
+      image,
       link,
       git,
       wip,
@@ -62,7 +39,7 @@ exports.sourceNodes = ({ actions, createNodeId, createContentDigest }) => {
       },
     };
 
-    // 3. Create the node
+
     actions.createNode(node);
   });
 };
